@@ -14,3 +14,7 @@ https://swaminathanvetri.in/2016/07/06/creating-buildtest-tasks-for-dotnet-core-
 VSCode launch.json debug and open specific url
 https://stackoverflow.com/a/58406148
 
+202301142354:
+Resetear gitignore
+git rm -r --cached .
+git add .;git commit -am "Varios";git push
