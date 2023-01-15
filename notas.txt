@@ -1,6 +1,7 @@
 
 
 Comandos:
+dotnet --list-sdks
 dotnet tool install --global dotnet-ef
 dotnet ef add migration "Nombre"
 dotnet ef database update
@@ -12,3 +13,4 @@ https://swaminathanvetri.in/2016/07/06/creating-buildtest-tasks-for-dotnet-core-
 202301142309:
 VSCode launch.json debug and open specific url
 https://stackoverflow.com/a/58406148
+
