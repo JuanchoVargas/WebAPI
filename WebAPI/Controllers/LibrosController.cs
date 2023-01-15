@@ -31,6 +31,14 @@ namespace WebAPI.Controllers
             // return await context.Libros.Include(x => x.Autor).FirstOrDefaultAsync(x => x.id == id);
         }
 
+        [HttpGet("editorial")]
+        public List<Libro> GetEditorial(int id)
+        {
+            return context.Libros.Where(x => x.id_editorial == id).ToList();
+            // return await context.Libros.Include(x => x.Autor).FirstOrDefaultAsync(x => x.id == id);
+        }
+
+
         [HttpGet("titulo")]
         public async Task<ActionResult<Libro>> Get(string nombre)
         {
