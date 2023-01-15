@@ -10,3 +10,5 @@ https://vitejs.dev
 
 Vue 3.0
 https://vuejs.org
+
+dotnet ef databae ipdate

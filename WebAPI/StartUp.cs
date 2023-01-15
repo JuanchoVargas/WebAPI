@@ -4,47 +4,49 @@ using WebAPIAutores;
 
 namespace WebAPI
 {
-    public class Startup
-    {
-        public Startup(IConfiguration configuration)
-        {
-            Configuration = configuration;
-        }
+	public class Startup
+	{
+		public Startup(IConfiguration configuration)
+		{
+			Configuration = configuration;
+		}
 
-        public IConfiguration Configuration { get; }
+		public IConfiguration Configuration { get; }
 
-        public void ConfigureServices(IServiceCollection services)
-        {
+		public void ConfigureServices(IServiceCollection services)
+		{
 
-            services.AddDbContext<ApplicationDBContext>(options =>
-            options.UseSqlServer(Configuration.GetConnectionString("defaultConnection")));
+			services.AddDbContext<ApplicationDBContext>(options =>
+			options.UseSqlServer(Configuration.GetConnectionString("defaultConnection")));
 
-            services.AddEndpointsApiExplorer();
-            services.AddAuthorization();
-            services.AddControllers();
-            services.AddHealthChecks();
-            services.AddSwaggerGen();
+			services.AddEndpointsApiExplorer();
+			services.AddAuthorization();
+			services.AddControllers();
+			services.AddHealthChecks();
+			services.AddSwaggerGen();
 
-        }
+		}
 
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
-        {
-            if (env.IsDevelopment())
-            {
-                app.UseSwagger();
-                app.UseSwaggerUI();
-            }
+		public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+		{
+			// 202301142257: Usa swagger también en producción
+			// if (env.IsDevelopment())
+			// {
+			app.UseSwagger();
+			app.UseSwaggerUI();
+			// }
 
-            app.UseHttpsRedirection();
+			// 202301142255: Desabilita la redirección
+			// app.UseHttpsRedirection();
 
-            app.UseRouting();
+			app.UseRouting();
 
-            app.UseAuthorization();
+			app.UseAuthorization();
 
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapControllers();
-            });
-        }
-    }
+			app.UseEndpoints(endpoints =>
+			{
+				endpoints.MapControllers();
+			});
+		}
+	}
 }
