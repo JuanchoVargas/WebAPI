@@ -1,21 +1,41 @@
+
+# -------------------------------------------------------------------------------------------
+# Node -> https://erresen.github.io/vue/js/git/2020/07/08/vue-js-gitigore.html
+
+.DS_Store
+node_modules
+dist
+
+# local env files
+.env.local
+.env.*.local
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# -------------------------------------------------------------------------------------------
+# VSCode
+
 *.swp
 *.*~
 project.lock.json
-.DS_Store
 *.pyc
 nupkg/
-
-# # Visual Studio Code
-# .vscode
 
 # Rider
 .idea
 
 # User-specific files
+*.njsproj
+*.ntvs*
+*.sln.docstates
 *.suo
+*.sw?
 *.user
 *.userosscache
-*.sln.docstates
 
 # Build results
 [Dd]ebug/
@@ -33,6 +53,6 @@ bld/
 msbuild.log
 msbuild.err
 msbuild.wrn
-
-# Visual Studio 2015
 .vs/
+
+# -------------------------------------------------------------------------------------------
