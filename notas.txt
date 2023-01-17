@@ -1,4 +1,6 @@
-
+nvm = node version manager
+node 
+npm = node package manager
 
 Comandos:
 dotnet --list-sdks
