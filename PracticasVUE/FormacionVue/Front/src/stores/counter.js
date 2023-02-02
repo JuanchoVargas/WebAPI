@@ -1,4 +1,3 @@
-import { ref, computed } from 'vue'
 import { defineStore } from 'pinia'
 
 export const useContador = defineStore({
@@ -7,7 +6,6 @@ export const useContador = defineStore({
       contadorVal: 0, 
       titulo: 'Equipo'    
     }),
-
     actions:{
       aumentarContador(aumento){
         this.contadorVal+=aumento;
@@ -22,5 +20,4 @@ export const useContador = defineStore({
         return 'Impar'
       }
     }
-
 })

@@ -1,3 +1,23 @@
+<script setup>
+import { ref } from 'vue'
+import{ useContador } from '@/stores/counter'
+
+
+// ? de esta manera puedo crear una propiedad No responsive estatica 
+const tituloApp = ref('Aprendiendo en VUE');
+const tituloAppRef = ref(null);
+const contador = useContador(); 
+
+const setName =(e)=>{
+  let nombreEquipo= e.target.value; 
+  contador.titulo = nombreEquipo;
+  tituloApp.value = nombreEquipo;
+  console.log(nombreEquipo);
+}
+
+
+</script>
+
 
 <template>
   <div class="home">
@@ -13,23 +33,12 @@
     <p >Este Contador es {{ contador.parOimpar }}</p>
     <div class="edit">
       <h4>Edicion Nombre del Equipo</h4>
-      <input type="text" v-autofocus>
+      <input type="text" v-on:keyup="setName">
     </div>
 </div>   
 </template>
 
-<script setup>
-import { ref } from 'vue'
-import{ useContador } from '@/stores/counter'
 
-
-// ? de esta manera puedo crear una propiedad No responsive estatica 
-const tituloApp = 'Aprendiendo en VUE';
-const tituloAppRef = ref(null);
-
-const contador = useContador(); 
-
-</script>
 
 <style>
 .home{

@@ -61,10 +61,10 @@ namespace WebAPI.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"));
 
-                    b.Property<int>("id_autor")
+                    b.Property<int>("autor_id")
                         .HasColumnType("int");
 
-                    b.Property<int>("id_editorial")
+                    b.Property<int>("editorial_id")
                         .HasColumnType("int");
 
                     b.Property<string>("titulo")
