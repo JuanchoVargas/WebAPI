@@ -17,12 +17,23 @@ namespace WebAPI.Controllers
       this.context = context;
     }
 
+<<<<<<< HEAD
     [HttpGet]
     public async Task<ActionResult<List<Autor>>> Obtener()
     {
       return await context.Autores.ToListAsync();
       // return await context.Autores.Include(x => x.Libros).ToListAsync();
     }
+=======
+        [HttpGet]
+        public async Task<ActionResult<List<Autor>>> Get()
+        {
+            var autores = await context.Autores.ToListAsync();
+            return autores;
+            // return await context.Autores.ToListAsync();
+            // return await context.Autores.Include(x => x.Libros).ToListAsync();
+        }
+>>>>>>> 14267ff5fbf2bf9636676ef1fc0ca79d36ab69f2
 
     // api/autores/:id
     [HttpGet("{id:int}")]
